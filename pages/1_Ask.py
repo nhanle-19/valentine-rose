@@ -4,7 +4,6 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent.parent
 GIF_PATH = HERE / "Cutecat.gif"
 
-
 def apply_theme():
     st.markdown(
         """
@@ -30,7 +29,6 @@ def apply_theme():
             max-width: 980px !important;
         }
 
-        /* Center helper */
         .center { text-align: center; }
 
         .big-title {
@@ -46,7 +44,7 @@ def apply_theme():
             margin: 0 0 1.0rem 0;
         }
 
-        /* Make columns content centered */
+        /* Center content inside columns */
         div[data-testid="column"] {
             display: flex;
             flex-direction: column;
@@ -64,29 +62,30 @@ def apply_theme():
             will-change: transform !important;
         }
 
-        /* YES button (bigger) — first button on the page */
-        div.stButton:nth-of-type(1) > button {
-            font-size: 1.55rem !important;
-            padding: 1.25rem 1.2rem !important;
+        /* YES (primary) = BIG */
+        div.stButton > button[kind="primary"] {
+            font-size: 1.65rem !important;
+            padding: 1.35rem 1.2rem !important;
             background: linear-gradient(135deg, #ff1e6e, #ff5fa2) !important;
             color: white !important;
+            box-shadow: 0 26px 60px rgba(255, 30, 110, 0.35) !important;
         }
-        div.stButton:nth-of-type(1) > button:hover {
-            transform: scale(1.10) !important;
-            box-shadow: 0 26px 60px rgba(255, 30, 110, 0.45) !important;
+        div.stButton > button[kind="primary"]:hover {
+            transform: scale(1.08) !important;
+            box-shadow: 0 40px 90px rgba(255, 30, 110, 0.55) !important;
             filter: brightness(1.03) !important;
         }
 
-        /* NO button (smaller) — second button on the page */
-        div.stButton:nth-of-type(2) > button {
+        /* NO (secondary) = SMALL */
+        div.stButton > button[kind="secondary"] {
             font-size: 1.05rem !important;
             padding: 0.75rem 1.1rem !important;
-            background: rgba(255, 255, 255, 0.70) !important;
+            background: rgba(255, 255, 255, 0.75) !important;
             color: #a01952 !important;
             box-shadow: 0 10px 24px rgba(255, 47, 122, 0.12) !important;
         }
-        div.stButton:nth-of-type(2) > button:hover {
-            transform: scale(1.04) !important;
+        div.stButton > button[kind="secondary"]:hover {
+            transform: scale(1.03) !important;
             box-shadow: 0 16px 36px rgba(255, 47, 122, 0.20) !important;
             filter: brightness(1.02) !important;
         }
@@ -95,7 +94,6 @@ def apply_theme():
         unsafe_allow_html=True,
     )
 
-
 apply_theme()
 
 st.markdown("<div class='center'>", unsafe_allow_html=True)
@@ -103,7 +101,7 @@ st.markdown("<div class='big-title'>Will you be my valentine? 💗</div>", unsaf
 st.markdown("<div class='sub'>(Choose wisely 😌)</div>", unsafe_allow_html=True)
 
 # Centered GIF (no stretch)
-col_l, col_m, col_r = st.columns([1, 2, 1], gap="large")
+col_l, col_m, col_r = st.columns([1, 2, 1])
 with col_m:
     if GIF_PATH.exists():
         st.image(GIF_PATH.read_bytes(), width=520)
@@ -112,24 +110,21 @@ with col_m:
 
 st.write("")
 
-# Buttons centered in middle area
-col_l2, col_m2, col_r2 = st.columns([1, 2, 1], gap="large")
+# Center the two-button row
+col_l2, col_m2, col_r2 = st.columns([1, 2, 1])
 with col_m2:
     c1, c2 = st.columns(2, gap="large")
 
     with c1:
-        if st.button("Yes ✅", use_container_width=True):
+        if st.button("Yes ✅", type="primary", use_container_width=True):
             st.session_state["choice"] = "yes"
             st.switch_page("pages/3_Reveal.py")
 
     with c2:
-        if st.button("No ❌", use_container_width=True):
+        if st.button("No ❌", type="secondary", use_container_width=True):
             st.session_state["choice"] = "no"
             st.switch_page("pages/2_No.py")
 
 st.markdown("</div>", unsafe_allow_html=True)
-
-
-
 
 
