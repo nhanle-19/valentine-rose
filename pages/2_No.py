@@ -54,6 +54,17 @@ def apply_theme():
             box-shadow: 0 14px 30px rgba(255, 47, 122, 0.18) !important;
         }
         </style>
+        .big-yes button {
+            font-size: 1.4rem !important;
+            padding: 1.4rem 2rem !important;
+            background: linear-gradient(135deg, #ff2f7a, #ff6aa2) !important;
+            color: white !important;
+            box-shadow: 0 20px 45px rgba(255, 47, 122, 0.35) !important;
+            transform: scale(1.08);
+        }
+        .big-yes button:hover {
+            transform: scale(1.15);
+        }
         """,
         unsafe_allow_html=True,
     )
@@ -68,9 +79,11 @@ st.markdown("<div class='sub'>(PLEASE THINK CAREFULLY!)</div>", unsafe_allow_htm
 st.image(NO_GIF_PATH.read_bytes(), width=550)
 
 st.write("")
+st.markdown("<div class='big-yes'>", unsafe_allow_html=True)
 if st.button("Yes ✅", width="stretch"):
     st.session_state["choice"] = "yes"
-    st.switch_page("pages/3_Reveal.py")
-
+    st.switch_page("pages/2_Reveal.py")
 st.markdown("</div>", unsafe_allow_html=True)
+
+
 
