@@ -104,7 +104,7 @@ st.markdown("<div class='sub'>(Choose wisely 😌)</div>", unsafe_allow_html=Tru
 col_l, col_m, col_r = st.columns([1, 2, 1])
 with col_m:
     if GIF_PATH.exists():
-        st.image(GIF_PATH.read_bytes(), width=800)
+        st.image(GIF_PATH.read_bytes(), width=1200)
     else:
         st.warning(f"Could not find GIF at: {GIF_PATH}")
 
@@ -126,6 +126,7 @@ with col_m2:
             st.switch_page("pages/2_No.py")
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
