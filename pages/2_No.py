@@ -2,7 +2,7 @@ import streamlit as st
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
-NO_GIF_PATH = HERE / "No.gif"   # you can change name later
+NO_GIF_PATH = HERE / "cryingcat.gif"   # you can change name later
 
 
 def apply_theme():
@@ -65,11 +65,6 @@ st.markdown("<div class='center'>", unsafe_allow_html=True)
 st.markdown("<div class='big-title'>Hmm… you sure 🥺</div>", unsafe_allow_html=True)
 st.markdown("<div class='sub'>(PLEASE THINK CAREFULLY!)</div>", unsafe_allow_html=True)
 
-# GIF placeholder for later
-if NO_GIF_PATH.exists():
-    st.image(NO_GIF_PATH.read_bytes(), width="stretch")
-else:
-    st.info(f"Add your GIF later at: {cryingcat.gif}")
 
 st.write("")
 if st.button("Yes ✅", width="stretch"):
