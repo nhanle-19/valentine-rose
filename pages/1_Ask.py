@@ -78,7 +78,7 @@ c1, c2 = st.columns(2, gap="large")
 with c1:
     if st.button("Yes ✅", width="stretch"):
         st.session_state["choice"] = "yes"
-        st.switch_page("pages/2_Reveal.py")
+        st.switch_page("pages/3_Reveal.py")
 
 with c2:
     if st.button("No ❌", width="stretch"):
@@ -89,4 +89,5 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
