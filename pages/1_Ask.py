@@ -68,7 +68,7 @@ st.markdown("<div class='sub'>(Choose wisely 😌)</div>", unsafe_allow_html=Tru
 
 # Big animated GIF
 if GIF_PATH.exists():
-    st.image(GIF_PATH.read_bytes(), width="stretch")
+    st.image(GIF_PATH.read_bytes(), width=600)
 else:
     st.warning(f"Could not find GIF at: {GIF_PATH}")
 
@@ -89,5 +89,6 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
