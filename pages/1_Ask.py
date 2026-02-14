@@ -64,12 +64,11 @@ apply_theme()
 
 st.markdown("<div class='center'>", unsafe_allow_html=True)
 st.markdown("<div class='big-title'>Will you be my valentine? 💗</div>", unsafe_allow_html=True)
-st.markdown("<div class='sub'>(Two correct answers 😌)</div>", unsafe_allow_html=True)
+st.markdown("<div class='sub'>(Choose wisely 😌)</div>", unsafe_allow_html=True)
 
 # Big animated GIF
 if GIF_PATH.exists():
     st.image(GIF_PATH.read_bytes(), width="stretch")
-
 else:
     st.warning(f"Could not find GIF at: {GIF_PATH}")
 
@@ -77,13 +76,17 @@ st.write("")
 c1, c2 = st.columns(2, gap="large")
 
 with c1:
-    if st.button("yes", width="stretch"):
+    if st.button("Yes ✅", width="stretch"):
         st.session_state["choice"] = "yes"
         st.switch_page("pages/2_Reveal.py")
 
 with c2:
-    if st.button("YES, but big!", width="stretch"):
-        st.session_state["choice"] = "YES"
-        st.switch_page("pages/2_Reveal.py")
+    if st.button("No ❌", width="stretch"):
+        st.session_state["choice"] = "no"
+        st.switch_page("pages/2_No.py")
 
 st.markdown("</div>", unsafe_allow_html=True)
+
+
+st.markdown("</div>", unsafe_allow_html=True)
+
