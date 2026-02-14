@@ -101,7 +101,7 @@ st.markdown("<div class='big-title'>Will you be my valentine? 💗</div>", unsaf
 st.markdown("<div class='sub'>(Choose wisely 😌)</div>", unsafe_allow_html=True)
 
 # Centered GIF (no stretch)
-col_l, col_m, col_r = st.columns([1, 2, 1])
+col_l, col_m, col_r = st.columns([1, 4, 1])
 with col_m:
     if GIF_PATH.exists():
         st.image(GIF_PATH.read_bytes(), width=1200)
@@ -126,6 +126,7 @@ with col_m2:
             st.switch_page("pages/2_No.py")
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
