@@ -98,7 +98,7 @@ if st.button("Yes ✅", use_container_width='stretch'):
     st.switch_page("pages/3_Reveal.py")
 st.markdown("</div>", unsafe_allow_html=True)
 
-st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
