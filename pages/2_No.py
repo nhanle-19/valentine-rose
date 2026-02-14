@@ -57,7 +57,7 @@ def apply_theme():
             transform: scale(1.06);
         }
         .big-yes div.stButton > button:hover {
-            transform: scale(1.12);
+            transform: scale(5);
         }
         </style>
         """,
