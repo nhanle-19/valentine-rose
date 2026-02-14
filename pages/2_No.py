@@ -69,12 +69,12 @@ st.markdown("<div class='sub'>(PLEASE THINK CAREFULLY!)</div>", unsafe_allow_htm
 if NO_GIF_PATH.exists():
     st.image(NO_GIF_PATH.read_bytes(), width="stretch")
 else:
-    st.info(f"Add your GIF later at: {NO_GIF_PATH.name}")
+    st.info(f"Add your GIF later at: {cryingcat.gif}")
 
 st.write("")
 if st.button("Yes ✅", width="stretch"):
     st.session_state["choice"] = "yes"
-    st.switch_page("pages/2_Reveal.py")
+    st.switch_page("pages/3_Reveal.py")
 
 st.markdown("</div>", unsafe_allow_html=True)
 
