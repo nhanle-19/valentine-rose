@@ -147,9 +147,9 @@ def rose_figure(n=130):
 choice = st.session_state.get("choice", "YES")
 
 st.markdown("<div class='center'>", unsafe_allow_html=True)
-st.markdown("<div class='title'>This rose is for you 🌹</div>", unsafe_allow_html=True)
+st.markdown("<div class='title'>This is your rose my fella 🌹</div>", unsafe_allow_html=True)
 st.markdown(f"<div class='sub'>You chose: <b>{choice}</b> 💞</div>", unsafe_allow_html=True)
-st.markdown("<div class='line'>And yes… it’s made from math 😌</div>", unsafe_allow_html=True)
+st.markdown("<div class='line'>And... it is not linear algebra 😌</div>", unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.latex(r"""
@@ -164,3 +164,4 @@ Z(r,\theta) &= x(r,\theta)\,\big(r\cos\phi - y(r,\theta)\sin\phi\big)
 st.markdown("<div class='reveal'>", unsafe_allow_html=True)
 st.plotly_chart(rose_figure(130), use_container_width=True, config={"displayModeBar": False})
 st.markdown("</div>", unsafe_allow_html=True)
+
