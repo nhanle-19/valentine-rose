@@ -62,7 +62,7 @@ def apply_theme():
 apply_theme()
 
 st.markdown("<div class='center'>", unsafe_allow_html=True)
-st.markdown("<div class='big-title'>Hmm… you sure 🥺</div>", unsafe_allow_html=True)
+st.markdown("<div class='big-title'>Hmm… you sure 🥺? Pick again!</div>", unsafe_allow_html=True)
 st.markdown("<div class='sub'>(PLEASE THINK CAREFULLY!)</div>", unsafe_allow_html=True)
 
 st.image(NO_GIF_PATH.read_bytes(), width="stretch")
