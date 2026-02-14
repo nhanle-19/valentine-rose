@@ -80,7 +80,7 @@ def apply_theme():
         div.stButton > button[kind="secondary"] {
             font-size: 1.05rem !important;
             padding: 0.75rem 1.1rem !important;
-            background: rgba(255, 255, 255, 0.75) !important;
+            background: #000000 !important;
             color: #a01952 !important;
             box-shadow: 0 10px 24px rgba(255, 47, 122, 0.12) !important;
         }
@@ -104,7 +104,7 @@ st.markdown("<div class='sub'>(Choose wisely 😌)</div>", unsafe_allow_html=Tru
 col_l, col_m, col_r = st.columns([1, 2, 1])
 with col_m:
     if GIF_PATH.exists():
-        st.image(GIF_PATH.read_bytes(), width=520)
+        st.image(GIF_PATH.read_bytes(), width=800)
     else:
         st.warning(f"Could not find GIF at: {GIF_PATH}")
 
@@ -126,5 +126,6 @@ with col_m2:
             st.switch_page("pages/2_No.py")
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
