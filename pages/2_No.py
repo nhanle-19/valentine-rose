@@ -45,7 +45,7 @@ def apply_theme():
             margin: 0 0 1.0rem 0;
         }
 
-        /* Buttons */
+        /* Base button style */
         div.stButton > button {
             border-radius: 999px !important;
             padding: 0.9rem 1.1rem !important;
@@ -53,18 +53,20 @@ def apply_theme():
             border: 0 !important;
             box-shadow: 0 14px 30px rgba(255, 47, 122, 0.18) !important;
         }
-        </style>
-        .big-yes button {
+
+        /* BIG final yes button (only inside .big-yes wrapper) */
+        .big-yes div.stButton > button {
             font-size: 1.4rem !important;
-            padding: 1.4rem 2rem !important;
+            padding: 1.35rem 2rem !important;
             background: linear-gradient(135deg, #ff2f7a, #ff6aa2) !important;
             color: white !important;
             box-shadow: 0 20px 45px rgba(255, 47, 122, 0.35) !important;
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
-        .big-yes button:hover {
-            transform: scale(1.15);
+        .big-yes div.stButton > button:hover {
+            transform: scale(1.12);
         }
+        </style>
         """,
         unsafe_allow_html=True,
     )
@@ -76,14 +78,25 @@ st.markdown("<div class='center'>", unsafe_allow_html=True)
 st.markdown("<div class='big-title'>Hmm… you sure 🥺? Pick again!</div>", unsafe_allow_html=True)
 st.markdown("<div class='sub'>(PLEASE THINK CAREFULLY!)</div>", unsafe_allow_html=True)
 
-st.image(NO_GIF_PATH.read_bytes(), width=550)
+# GIF (smaller than full stretch)
+col_l, col_m, col_r = st.columns([1, 2, 1])
+with col_m:
+    if NO_GIF_PATH.exists():
+        st.image(NO_GIF_PATH.read_bytes(), width=520)
+    else:
+        st.info(f"Add your GIF later at: {NO_GIF_PATH.name}")
 
 st.write("")
+
+# Big YES button (no stretch; uses container width)
 st.markdown("<div class='big-yes'>", unsafe_allow_html=True)
-if st.button("Yes ✅", width="stretch"):
+if st.button("Yes ✅", use_container_width=True):
     st.session_state["choice"] = "yes"
     st.switch_page("pages/2_Reveal.py")
 st.markdown("</div>", unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
