@@ -48,20 +48,27 @@ def apply_theme():
 
 
         /* BIG final yes button (only inside .big-yes wrapper) */
-       .big-yes div.stButton > button {
-            font-size: 2rem !important;
-            padding: 2rem 3rem !important;
-            background: linear-gradient(135deg, #ff1e6e, #ff5fa2) !important;
-            color: white !important;
+       div.stButton > button {
             border-radius: 999px !important;
+            font-size: 2.1rem !important;
+            padding: 2.0rem 3.0rem !important;
+            font-weight: 900 !important;
+            border: 0 !important;
+        
+            background: linear-gradient(135deg, #ff1e6e, #ff5fa2) !important;
+            color: #ffffff !important;
+        
             box-shadow: 0 30px 70px rgba(255, 30, 110, 0.45) !important;
-            transform: scale(1.18);
-            transition: all 0.25s ease-in-out;
+        
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease !important;
+            transform-origin: center !important;
+            will-change: transform !important;
         }
         
-        .big-yes div.stButton > button:hover {
-            transform: scale(1.28);
-            box-shadow: 0 40px 90px rgba(255, 30, 110, 0.6) !important;
+        div.stButton > button:hover {
+            transform: scale(1.10) !important;
+            box-shadow: 0 45px 95px rgba(255, 30, 110, 0.65) !important;
+            filter: brightness(1.03) !important;
         }
         </style>
         """,
@@ -87,8 +94,7 @@ st.write("")
 
 # Big YES button (no stretch; uses container width)
 st.markdown("<div class='big-yes'>", unsafe_allow_html=True)
-if st.button("Yes ✅", use_container_width=True):
-    st.session_state["choice"] = "yes"
+if st.button("Yes ✅", use_container_width='stretch'):
     st.switch_page("pages/3_Reveal.py")
 st.markdown("</div>", unsafe_allow_html=True)
 
