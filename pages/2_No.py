@@ -45,14 +45,7 @@ def apply_theme():
             margin: 0 0 1.0rem 0;
         }
 
-        /* Base button style */
-        div.stButton > button {
-            border-radius: 999px !important;
-            padding: 0.9rem 1.1rem !important;
-            font-weight: 850 !important;
-            border: 0 !important;
-            box-shadow: 0 14px 30px rgba(255, 47, 122, 0.18) !important;
-        }
+
 
         /* BIG final yes button (only inside .big-yes wrapper) */
         .big-yes div.stButton > button {
@@ -92,7 +85,7 @@ st.write("")
 st.markdown("<div class='big-yes'>", unsafe_allow_html=True)
 if st.button("Yes ✅", use_container_width=True):
     st.session_state["choice"] = "yes"
-    st.switch_page("pages/2_Reveal.py")
+    st.switch_page("pages/3_Reveal.py")
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
