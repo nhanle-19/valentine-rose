@@ -62,8 +62,8 @@ def apply_theme():
 apply_theme()
 
 st.markdown("<div class='center'>", unsafe_allow_html=True)
-st.markdown("<div class='big-title'>Hmm… try again 🥺</div>", unsafe_allow_html=True)
-st.markdown("<div class='sub'>(There is only one button now.)</div>", unsafe_allow_html=True)
+st.markdown("<div class='big-title'>Hmm… you sure 🥺</div>", unsafe_allow_html=True)
+st.markdown("<div class='sub'>(PLEASE THINK CAREFULLY!)</div>", unsafe_allow_html=True)
 
 # GIF placeholder for later
 if NO_GIF_PATH.exists():
