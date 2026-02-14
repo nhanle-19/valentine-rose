@@ -48,16 +48,20 @@ def apply_theme():
 
 
         /* BIG final yes button (only inside .big-yes wrapper) */
-        .big-yes div.stButton > button {
-            font-size: 1.4rem !important;
-            padding: 1.35rem 2rem !important;
-            background: linear-gradient(135deg, #ff2f7a, #ff6aa2) !important;
+       .big-yes div.stButton > button {
+            font-size: 2rem !important;
+            padding: 2rem 3rem !important;
+            background: linear-gradient(135deg, #ff1e6e, #ff5fa2) !important;
             color: white !important;
-            box-shadow: 0 20px 45px rgba(255, 47, 122, 0.35) !important;
-            transform: scale(1.06);
+            border-radius: 999px !important;
+            box-shadow: 0 30px 70px rgba(255, 30, 110, 0.45) !important;
+            transform: scale(1.18);
+            transition: all 0.25s ease-in-out;
         }
+        
         .big-yes div.stButton > button:hover {
-            transform: scale(3);
+            transform: scale(1.28);
+            box-shadow: 0 40px 90px rgba(255, 30, 110, 0.6) !important;
         }
         </style>
         """,
